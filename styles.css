@@ -1,0 +1,158 @@
+:root {
+  --violet: hsl(257, 40%, 49%);
+  --font-headings: "Poppins", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url(./images/bg-mobile.svg) var(--violet) no-repeat top;
+  color: white;
+  font-family: var(--font-body);
+}
+h1,
+p {
+  text-align: center;
+}
+h1 {
+  font-family: var(--font-headings);
+  /* font-size: 1.8rem; */
+  font-size: clamp(1.6rem, 1em + 2vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+p,
+a {
+  font-weight: 400;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+p {
+  /* font-size: calc(18px + (26 - 14) * ((100vw - 300px) / (1440 - 300))); */
+  font-size: clamp(1.1rem, 2vw, 1.2rem);
+  line-height: 1.5;
+  letter-spacing: 0.021em;
+  margin-bottom: 1.5rem;
+}
+header {
+  margin-top: 1.5rem;
+}
+/* Layout  */
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  padding: 0 15px;
+}
+
+.content {
+  display: grid;
+  grid-template-areas:
+    "imageB"
+    "description";
+  row-gap: 1rem;
+  justify-items: center;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.description {
+  grid-area: description;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Images */
+.brand-logo {
+  width: 150px;
+  margin-left: 1.2rem;
+}
+.illustration-mockup {
+  width: 87%;
+  margin-bottom: 3rem;
+  grid-area: imageB;
+}
+
+/* Call to action (button and social media icons) */
+.button-register {
+  background: white;
+  border-radius: 40px;
+  box-shadow: 1px 2px 9px rgba(0, 0, 0, 0.3);
+  color: var(--violet);
+  padding: 0.7rem 4.2rem;
+  text-decoration: none;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.social a {
+  margin: 0 0.5rem;
+}
+
+/* Helpers  */
+.circle {
+  width: 16px;
+  height: 16px;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 0.5em;
+}
+.centered {
+  display: grid;
+  place-items: center;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(231, 24%, 94%);
+}
+
+@media (min-width: 1280px) {
+  body {
+    background: url(./images/bg-desktop.svg) var(--violet) no-repeat;
+    background-size: cover;
+  }
+  h1,
+  p {
+    text-align: left;
+  }
+  h1 {
+    /* font-size: 2.5rem; */
+  }
+  p {
+    /*font-size: 1.1rem;*/
+    letter-spacing: -0.009em;
+  }
+  .layout {
+    padding: 0 5rem;
+  }
+  .content {
+    grid-template-areas: "imageB imageB imageB description";
+    gap: 2rem;
+    align-items: center;
+  }
+  .description {
+    align-items: start;
+    justify-content: center;
+  }
+  .brand-logo {
+    width: 200px;
+  }
+  .illustration-mockup {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .social {
+    justify-content: flex-end;
+  }
+}
