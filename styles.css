@@ -18,7 +18,6 @@ p {
 }
 h1 {
   font-family: var(--font-headings);
-  /* font-size: 1.8rem; */
   font-size: clamp(1.6rem, 1em + 2vw, 2.5rem);
   margin-bottom: 1rem;
 }
@@ -31,7 +30,6 @@ a {
   text-decoration: none;
 }
 p {
-  /* font-size: calc(18px + (26 - 14) * ((100vw - 300px) / (1440 - 300))); */
   font-size: clamp(1.1rem, 2vw, 1.2rem);
   line-height: 1.5;
   letter-spacing: 0.021em;
@@ -51,7 +49,7 @@ header {
 .content {
   display: grid;
   grid-template-areas:
-    "imageB"
+    "illustration"
     "description";
   row-gap: 1rem;
   justify-items: center;
@@ -74,7 +72,7 @@ header {
 .illustration-mockup {
   width: 87%;
   margin-bottom: 3rem;
-  grid-area: imageB;
+  grid-area: illustration;
 }
 
 /* Call to action (button and social media icons) */
@@ -83,8 +81,8 @@ header {
   border-radius: 40px;
   box-shadow: 1px 2px 9px rgba(0, 0, 0, 0.3);
   color: var(--violet);
-  padding: 0.7rem 4.2rem;
   text-decoration: none;
+  padding: 0.7rem 4.2rem;
 }
 
 .social {
@@ -96,7 +94,6 @@ header {
   margin: 0 0.5rem;
 }
 
-/* Helpers  */
 .circle {
   width: 16px;
   height: 16px;
@@ -126,24 +123,23 @@ header {
   p {
     text-align: left;
   }
-  h1 {
-    /* font-size: 2.5rem; */
-  }
   p {
-    /*font-size: 1.1rem;*/
     letter-spacing: -0.009em;
   }
   .layout {
     padding: 0 5rem;
   }
   .content {
-    grid-template-areas: "imageB imageB imageB description";
+    grid-template-areas: "illustration illustration illustration description";
     gap: 2rem;
     align-items: center;
   }
   .description {
     align-items: start;
-    justify-content: center;
+  }
+  .button-register:hover {
+    background: #00252e;
+    color: white;
   }
   .brand-logo {
     width: 200px;
@@ -154,5 +150,9 @@ header {
   }
   .social {
     justify-content: flex-end;
+  }
+  .social a:hover {
+    background: white;
+    color: var(--violet);
   }
 }
